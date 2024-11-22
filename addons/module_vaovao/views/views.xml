@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="module_vaovao.list">
+      <field name="name">moduleVaovao list</field>
+      <field name="model">module_vaovao.module_vaovao</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="module_vaovao.action_window">
+      <field name="name">moduleVaovao window</field>
+      <field name="res_model">module_vaovao.module_vaovao</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="module_vaovao.action_server">
+      <field name="name">moduleVaovao server</field>
+      <field name="model_id" ref="model_module_vaovao_module_vaovao"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="moduleVaovao" id="module_vaovao.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="module_vaovao.menu_1" parent="module_vaovao.menu_root"/>
+    <menuitem name="Menu 2" id="module_vaovao.menu_2" parent="module_vaovao.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="module_vaovao.menu_1_list" parent="module_vaovao.menu_1"
+              action="module_vaovao.action_window"/>
+    <menuitem name="Server to list" id="module_vaovao" parent="module_vaovao.menu_2"
+              action="module_vaovao.action_server"/>
+-->
+  </data>
+</odoo>
