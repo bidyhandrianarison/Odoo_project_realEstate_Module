@@ -28,10 +28,10 @@ class EstateProperty(models.Model):
     best_price = fields.Float(compute='_compute_best_price', store=True)
 
     # RELATIONS
-    property_type_id = fields.Many2one("estate.property.type", string="Property type")
-    buyer_id = fields.Many2one("res.partner", string="Buyer", compute='_compute_buyer', copy=False)
-    salesperson_id = fields.Many2one("res.users", string="Salesman", default=lambda self: self.env.user)
-    property_tag_ids = fields.Many2many("estate.property.tag", string="Tags")
+    property_type_id = fields.Many2one("estate.property.type", string="Property type",ondelete="set null")
+    buyer_id = fields.Many2one("res.partner", string="Buyer", compute='_compute_buyer', copy=False,ondelete="set null")
+    salesperson_id = fields.Many2one("res.users", string="Salesman", default=lambda self: self.env.user,ondelete="set null")
+    property_tag_ids = fields.Many2many("estate.property.tag", string="Tags",ondelete="cascade")
     offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
 
     _sql_constraints = [
